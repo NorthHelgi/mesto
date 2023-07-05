@@ -1,0 +1,17 @@
+.profile__edit {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    background-image: url(../../../image/Vector_pen.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: solid 1px white;
+    width: 24px;
+    height: 24px;
+    margin: 15px 0 0 18px;
+}
+
+.profile__edit:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,6 @@
+.input__indent {
+    margin: 0 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}

@@ -1,0 +1,4 @@
+.profile__edit-btn {
+    display: flex;
+    flex-direction: row;
+}
