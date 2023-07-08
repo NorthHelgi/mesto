@@ -1,4 +1,4 @@
-.input__indent {
+.form {
     margin: 0 36px;
     display: flex;
     flex-direction: column;
@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 548px) {
-    .input__indent {
+    .form {
         margin: 0 22px;
     }
 }

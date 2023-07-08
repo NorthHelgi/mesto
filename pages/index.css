@@ -20,7 +20,7 @@
 @import url(../blocks/popup/__content/popup__content.css);
 @import url(../blocks/popup/__edit-info/popup__edit-info.css);
 @import url(../blocks/popup/__save/popup__save.css);
-@import url(../blocks/popup/__indent/input__indent.css);
+@import url(../blocks/popup/__form/form.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/form/__input/form__input.css);
 @import url(../blocks/elements/elements.css);
