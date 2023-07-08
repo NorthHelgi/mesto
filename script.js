@@ -1,7 +1,7 @@
 const profileEditButton = document.querySelector('.profile__edit');
 const popupAbout = document.querySelector('.popup_type_edit');
 const buttonCloseAboutPopup = popupAbout.querySelector('.popup__close');
-const profileTitle = document.querySelector('.ptofile__title');
+const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const saveButton = document.querySelector('.popup__save');
 

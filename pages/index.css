@@ -1,11 +1,15 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts/inter.css);
 @import url(../blocks/page/page.css);
+@import url(../blocks/page/__container/page__container.css);
+@import url(../blocks/content/content.css);
+@import url(../blocks/section/section.css);
 @import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/profile/profile.css);
-@import url(../blocks/profile/__title/ptofile__title.css);
+@import url(../blocks/profile/__title/profile__title.css);
 @import url(../blocks/profile/__button/profile__button.css);
-@import url(../blocks/profile/__edit-btn/profile__edit-btn.css);
+@import url(../blocks/profile/__edit-section/profile__edit-section.css);
 @import url(../blocks/profile/__edit/profile__edit.css);
 @import url(../blocks/profile/__header/profile__header.css);
 @import url(../blocks/profile/__image/profile__image.css);
@@ -20,7 +24,8 @@
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/form/__input/form__input.css);
 @import url(../blocks/elements/elements.css);
-@import url(../blocks/elements/__card/elements__card.css);
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__picture/card__picture.css);
 @import url(../blocks/card/__image/card__image.css);
 @import url(../blocks/card/__item/card__item.css);
 @import url(../blocks/card/__item/card__item.css);

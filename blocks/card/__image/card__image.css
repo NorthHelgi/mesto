@@ -1,6 +1,6 @@
 .card__image {
-    width: 100%; /* Используйте относительную ширину */
-    height: auto; /* Автоматическая высота, чтобы сохранить пропорции изображения */
-    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
     border-radius: 10px 10px 0 0;
 }

@@ -4,3 +4,9 @@
     flex-direction: column;
     gap: 30px;
 }
+
+@media screen and (max-width: 548px) {
+    .input__indent {
+        margin: 0 22px;
+    }
+}
