@@ -1,6 +1,7 @@
-.popup__form__input__about {
+.popup__form_input_name {
     padding: 0;
     border: none;
+    margin-bottom: 30px;
     padding-bottom: 13px;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
