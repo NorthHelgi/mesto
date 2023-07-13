@@ -20,6 +20,7 @@
 
 @media screen and (max-width: 548px) {
   .popup__close {
+    background-image: url(/image/Close_Icon_for_320px.svg);
     flex-shrink: 0;
     top: -38px;
     right: 0;
