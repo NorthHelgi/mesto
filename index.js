@@ -5,8 +5,8 @@ const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const saveButton = document.querySelector('.popup__save');
 
-const nameInput = document.querySelector('.popup__form__input__name');
-const aboutInput = document.querySelector('.popup__form__input__about');
+const nameInput = document.querySelector('.popup__input_name');
+const aboutInput = document.querySelector('.popup__input_about');
 
 function togglePopup() {
   popupAbout.classList.toggle('popup_opened');
