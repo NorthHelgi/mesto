@@ -1,4 +1,5 @@
 .profile__edit {
+    padding: 0;
     background: transparent;
     background-image: url(../../../image/Vector_pen.svg);
     background-position: center;

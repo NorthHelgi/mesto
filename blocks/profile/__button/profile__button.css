@@ -9,6 +9,7 @@
     width: 150px;
     height: 50px;
     margin-left: auto;
+    border-radius: 2px;
 }
 
 .profile__button:hover {
