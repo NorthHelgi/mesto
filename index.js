@@ -4,8 +4,8 @@ const buttonCloseAboutPopup = popupAbout.querySelector('.popup__close');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 
-const nameInput = document.querySelector('.popup__input_name');
-const aboutInput = document.querySelector('.popup__input_about');
+const nameInput = document.querySelector('.popup__input_type_name');
+const aboutInput = document.querySelector('.popup__input_type_about');
 
 function togglePopup() {
   popupAbout.classList.toggle('popup_opened');
