@@ -1,16 +1,16 @@
-.card__like {
+.card__delete {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
     display: flex;
     justify-content: center;
     background: transparent;
-    background-image: url(../../../image/Like.svg);
+    background-image: url(../../../image/trash.svg);
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
     border: none;
-    min-width: 22px;
+    width: 18px;
     height: 19px;
-}
-
-.card__like:hover {
-    opacity: 0.5;
 }

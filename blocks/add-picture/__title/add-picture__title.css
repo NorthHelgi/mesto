@@ -1,0 +1,17 @@
+.add-picture__title {
+    margin: 34px 64px 54px 36px;
+    color: #000;
+    font-size: 24px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+@media screen and (max-width: 548px) {
+    .add-picture__title {
+        font-size: 18px;
+        margin: 25px 22px 75px 22px;
+    }
+}
+
