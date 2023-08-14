@@ -1,7 +1,7 @@
-.show__container {
+.popup_show__container {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: white;
+    background-color: transparent;
 }

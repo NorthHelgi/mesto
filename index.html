@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -39,32 +39,32 @@
     <div class="popup section popup_type_edit">
         <div class="popup__container">
             <button class="popup__close" type="button"></button>
-            <h2 class="popup__edit-info">Редактировать профиль</h2>
+            <h2 class="popup__title">Редактировать профиль</h2>
             <form class="popup__form" name="profile-form">
-                <input type="text" name="name" class="popup__input popup__input_type_name">
-                <input type="text" name="about" class="popup__input popup__input_type_about">
+                <input type="text" name="name" required class="popup__input popup__input_type_name" placeholder="Имя" >
+                <input type="text" name="about" required class="popup__input popup__input_type_about" placeholder="О себе" >
                 <button class="popup__save" type="submit">Сохранить</button>
             </form>
         </div>
     </div>
 
-    <div class="add-picture">
-        <div class="add-picture__container">
-            <button class="add-picture__close" type="button"></button>
-            <h2 class="add-picture__title">Новое место</h2>
-            <form class="add-picture__form" name="big-picture-form">
-                <input type="text" name="name" class="add-picture__input add-picture__input_type_name"  placeholder="Название">
-                <input type="text" name="link" class="add-picture__input add-picture__input_type_link"  placeholder="Ссылка на картинку">
-                <button class="add-picture__save" type="submit">Создать</button>
+    <div class="popup section popup_add-picture">
+        <div class="popup__container">
+            <button class="popup__close add-picture__close" type="button"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form" name="big-picture-form">
+                <input type="text" name="name" required class="popup__input popup_add-picture__input_type_name"  placeholder="Название">
+                <input type="text" name="url" required class="popup__input popup_add-picture__input_type_url"  placeholder="Ссылка на картинку">
+                <button class="popup__save" type="submit">Создать</button>
             </form>
         </div>
     </div>
 
-    <div class="show section">
-        <div class="show__container">
-            <button class="show__close" type="button"></button>
-            <img src="https://horosho-tam.ru/pics/93/30/59c3bad0b45114422c4e3093.jpg" alt="" class="show__image">
-            <p class="show__caption"></p>
+    <div class="popup section popup_show">
+        <div class="popup_show__container">
+            <button class="popup__close popup_show__close" type="button"></button>
+            <img src="https://horosho-tam.ru/pics/93/30/59c3bad0b45114422c4e3093.jpg" alt="" class="popup__image popup_show__image">
+            <p class="popup__caption popup_show__caption"></p>
         </div>
     </div>
 
@@ -81,7 +81,7 @@
 
 </div>
 
-
+<script src="./constants.js"></script>
 <script src="./index.js"></script>
 </body>
 
