@@ -1,6 +1,6 @@
 const profileEditButton = document.querySelector('.profile__edit');
 const popupAbout = document.querySelector('.popup_type_edit');
-const buttonClose = popupAbout.querySelector('.popup__close');
+const buttonClosePopup = popupAbout.querySelector('.popup__close');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const nameInput = document.querySelector('.popup__input_type_name');
@@ -15,6 +15,10 @@ const addPicturePopup = document.querySelector('.popup_add-picture');
 const newCardForm = addPicturePopup.querySelector('.popup__form');
 const newCardMestoInput = newCardForm.querySelector('.popup__input_type_mesto');
 const newCardUrlInput = newCardForm.querySelector('.popup__input_type_url');
+const show = document.querySelector('.popup_show');
+const showImage = show.querySelector('.popup__image');
+const showCaption = show.querySelector('.popup__caption');
+const showClose = show.querySelector('.popup__close');
 
 function openPopup(popupElement) {
     popupElement.classList.add('popup_opened');
@@ -31,8 +35,9 @@ profileEditButton.addEventListener('click', () => {
 });
 
 addButton.addEventListener('click', () => openPopup(addPicture));
-buttonClose.addEventListener('click', () => closePopup(popupAbout));
+buttonClosePopup.addEventListener('click', () => closePopup(popupAbout));
 addPictureClouse.addEventListener('click', () => closePopup(addPicture));
+showClose.addEventListener('click', () => closePopup(show));
 
 profileForm.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -67,10 +72,6 @@ const createCard = (name, link) => {
     };
     deleteButton.addEventListener('click', deleteCard);
 
-    const show = document.querySelector('.popup_show');
-    const showImage = show.querySelector('.popup__image');
-    const showCaption = show.querySelector('.popup__caption');
-    const showClose = show.querySelector('.popup__close');
 
     cardImage.addEventListener('click', () => {
         openPopup(show);
@@ -79,14 +80,12 @@ const createCard = (name, link) => {
         showCaption.textContent = name;
     });
 
-    showClose.addEventListener('click', () => closePopup(show));
-
     return cloneCardElement;
 };
-
 newCardForm.addEventListener('submit', (event) => {
     event.preventDefault();
     addCard(newCardMestoInput.value, newCardUrlInput.value);
+    newCardForm.reset();
     closePopup(addPicturePopup);
 });
 
