@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./pages/index.css">
+    <script defer src="./validate.js"></script>
+    <script defer src="./constants.js"></script>
+    <script defer src="./index.js"></script>
     <title>Mesto</title>
 </head>
 
@@ -40,9 +43,11 @@
         <div class="popup__container">
             <button class="popup__close" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" name="profile-form">
-                <input type="text" name="name" required class="popup__input popup__input_type_name" placeholder="Имя" >
-                <input type="text" name="about" required class="popup__input popup__input_type_about" placeholder="О себе" >
+            <form class="popup__form" name="profile-form" novalidate>
+                <input type="text" name="name" required class="popup__input popup__input_type_name" placeholder="Имя" minlength="2" maxlength="40">
+                <span id="name-error"  class="error"></span>
+                <input type="text" name="about" required class="popup__input popup__input_type_about" placeholder="О себе" minlength="2" maxlength="200">
+                <span id="about-error"  class="error"></span>
                 <button class="popup__save" type="submit">Сохранить</button>
             </form>
         </div>
@@ -52,9 +57,11 @@
         <div class="popup__container">
             <button class="popup__close" type="button"></button>
             <h2 class="popup__title">Новое место</h2>
-            <form class="popup__form" name="big-picture-form">
+            <form class="popup__form" name="big-picture-form" novalidate>
                 <input type="text" name="mesto" required class="popup__input popup__input_type_mesto"  placeholder="Название">
-                <input type="text" name="url" required class="popup__input popup__input_type_url"  placeholder="Ссылка на картинку">
+                <span id="mesto-error"  class="error"></span>
+                <input type="url" name="url" required class="popup__input popup__input_type_url"  placeholder="Ссылка на картинку">
+                <span id="url-error"  class="error"></span>
                 <button class="popup__save" type="submit">Создать</button>
             </form>
         </div>
@@ -81,8 +88,6 @@
 
 </div>
 
-<script src="./constants.js"></script>
-<script src="./index.js"></script>
 </body>
 
 </html>

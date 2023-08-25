@@ -1,6 +1,6 @@
 const profileEditButton = document.querySelector('.profile__edit');
 const popupAbout = document.querySelector('.popup_type_edit');
-const buttonClosePopup = popupAbout.querySelector('.popup__close');
+const buttonCloseAboutPopup = popupAbout.querySelector('.popup__close');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const nameInput = document.querySelector('.popup__input_type_name');
@@ -20,8 +20,14 @@ const showImage = show.querySelector('.popup__image');
 const showCaption = show.querySelector('.popup__caption');
 const showClose = show.querySelector('.popup__close');
 
+
 function openPopup(popupElement) {
     popupElement.classList.add('popup_opened');
+    const formElement = popupElement.querySelector('.popup__form');
+    if (formElement) {
+        const submitButtonElement = formElement.querySelector('.popup__save');
+        toggleButtonState(submitButtonElement, formElement.checkValidity());
+    }
 }
 
 function closePopup(popupElement) {
@@ -35,7 +41,7 @@ profileEditButton.addEventListener('click', () => {
 });
 
 addButton.addEventListener('click', () => openPopup(addPicture));
-buttonClosePopup.addEventListener('click', () => closePopup(popupAbout));
+buttonCloseAboutPopup.addEventListener('click', () => closePopup(popupAbout));
 addPictureClouse.addEventListener('click', () => closePopup(addPicture));
 showClose.addEventListener('click', () => closePopup(show));
 
@@ -45,6 +51,7 @@ profileForm.addEventListener('submit', function (event) {
     profileSubtitle.textContent = aboutInput.value;
     closePopup(popupAbout);
 });
+
 
 const addCard = (name, link) => {
     const newCard = createCard(name, link);
@@ -92,3 +99,24 @@ newCardForm.addEventListener('submit', (event) => {
 initialCards.forEach(card => {
     addCard(card.name, card.link);
 });
+
+function closePopupClick (evt) {
+    if (evt.target === evt.currentTarget) {
+        closePopup(evt.target)
+    }
+}
+
+popupAbout.addEventListener('click', closePopupClick);
+addPicture.addEventListener('click', closePopupClick);
+show.addEventListener('click', closePopupClick);
+
+
+function closePopupOnEsc(evt) {
+    if (evt.key === 'Escape') {
+        const openedPopup = document.querySelector('.popup_opened');
+        if (openedPopup) {
+            closePopup(openedPopup);
+        }
+    }
+}
+document.addEventListener('keydown', closePopupOnEsc);
