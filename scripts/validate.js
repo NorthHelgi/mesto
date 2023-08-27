@@ -20,7 +20,7 @@ function toggleButtonState(buttonElement, isActive, inactiveButtonClass) {
 
 function checkInputValidity(inputElement, formElement, config) {
     const isInputValid = inputElement.validity.valid;
-    const errorElement = formElement.querySelector(`#${inputElement.name}-error`);
+    const errorElement = formElement.querySelector(config.errorIdPattern.replace('{{name}}', inputElement.name));
     const submitButtonElement = formElement.querySelector(config.submitButtonSelector);
     toggleButtonState(submitButtonElement, formElement.checkValidity(), config.inactiveButtonClass);
     if (isInputValid) {
@@ -30,11 +30,11 @@ function checkInputValidity(inputElement, formElement, config) {
     }
 }
 
-function setPopupFormButtonState(popupElement) {
-    const formElement = popupElement.querySelector('.popup__form');
+function setPopupFormButtonState(popupElement, config) {
+    const formElement = popupElement.querySelector(config.formSelector);
     if (formElement) {
-        const submitButtonElement = formElement.querySelector('.popup__save');
-        toggleButtonState(submitButtonElement, formElement.checkValidity());
+        const submitButtonElement = formElement.querySelector(config.submitButtonSelector);
+        toggleButtonState(submitButtonElement, formElement.checkValidity(), config.inactiveButtonClass);
     }
 }
 
@@ -53,7 +53,6 @@ function setEventListener(formElement, config) {
     });
 }
 
-
 function enableValidation(config) {
     const formsList = document.querySelectorAll(config.formSelector);
     formsList.forEach(function(formElement) {
@@ -61,10 +60,13 @@ function enableValidation(config) {
     });
 }
 
-enableValidation({
+const validationConfig = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__save',
     inactiveButtonClass: 'popup__save_invalid',
-    inputErrorClass: 'popup__input_state_invalid'
-});
+    inputErrorClass: 'popup__input_state_invalid',
+    errorIdPattern: '#{{name}}-error'
+};
+
+enableValidation(validationConfig);

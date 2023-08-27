@@ -23,7 +23,6 @@ const showClose = show.querySelector('.popup__close');
 function openPopup(popupElement) {
     popupElement.classList.add('popup_opened');
     document.addEventListener('keydown', closePopupOnEsc);
-    setPopupFormButtonState(popupElement);
 }
 
 function closePopup(popupElement) {
@@ -32,7 +31,6 @@ function closePopup(popupElement) {
     const formElement = popupElement.querySelector('.popup__form');
     if (formElement) {
         formElement.reset();
-        resetErrorMessages(formElement);
     }
 }
 
@@ -53,8 +51,14 @@ profileEditButton.addEventListener('click', () => {
 });
 
 addButton.addEventListener('click', () => openPopup(addPicture));
-buttonCloseAboutPopup.addEventListener('click', () => closePopup(popupAbout));
-addPictureClouse.addEventListener('click', () => closePopup(addPicture));
+buttonCloseAboutPopup.addEventListener('click', () => {
+    closePopup(popupAbout);
+    resetErrorMessages(popupAbout.querySelector('.popup__form'));
+});
+addPictureClouse.addEventListener('click', () => {
+    closePopup(addPicture);
+    resetErrorMessages(addPicture.querySelector('.popup__form'));
+});
 showClose.addEventListener('click', () => closePopup(show));
 
 profileForm.addEventListener('submit', function(event) {
