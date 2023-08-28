@@ -28,13 +28,13 @@ function openPopup(popupElement) {
 function closePopup(popupElement) {
     popupElement.classList.remove('popup_opened');
     document.removeEventListener('keydown', closePopupOnEsc);
+}
+function formRest(popupElement) {
     const formElement = popupElement.querySelector('.popup__form');
     if (formElement) {
         formElement.reset();
     }
 }
-
-
 function resetErrorMessages(formElement) {
     const inputElements = formElement.querySelectorAll('.popup__input');
     inputElements.forEach(inputElement => {
@@ -48,15 +48,22 @@ profileEditButton.addEventListener('click', () => {
     openPopup(popupAbout);
     nameInput.value = profileTitle.textContent;
     aboutInput.value = profileSubtitle.textContent;
+
 });
 
-addButton.addEventListener('click', () => openPopup(addPicture));
+addButton.addEventListener('click', () => {
+    openPopup(addPicture);
+    setPopupFormButtonState(addPicture, validationConfig);
+});
+
 buttonCloseAboutPopup.addEventListener('click', () => {
     closePopup(popupAbout);
+    formRest(popupAbout);
     resetErrorMessages(popupAbout.querySelector('.popup__form'));
 });
 addPictureClouse.addEventListener('click', () => {
     closePopup(addPicture);
+    formRest(addPicture);
     resetErrorMessages(addPicture.querySelector('.popup__form'));
 });
 showClose.addEventListener('click', () => closePopup(show));
@@ -111,7 +118,7 @@ newCardForm.addEventListener('submit', (event) => {
         link: newCardUrlInput.value
     };
     addCard(cardData);
-    newCardForm.reset();
+    newCardForm.reset()
     closePopup(addPicturePopup);
 });
 
